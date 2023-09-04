@@ -268,7 +268,23 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
+
     return Scaffold(
+        body: DecoratedBox(
+          position: DecorationPosition.background,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('/Users/sgranfrix/Desktop/Assets/Logo_Lazy_Hound.png'), // Percorso dell'immagine
+              fit: BoxFit.cover, // Imposta la modalità di adattamento dell'immagine
+            ),
+          ),
+          child: Center(
+            child: Text(
+              'WELCOME!',
+              style: TextStyle(color: Colors.blue, fontSize: 50.0),
+            ),
+          ),
+        ),
         appBar: AppBar(
           leading: Image.asset(
               "/Users/sgranfrix/Desktop/Assets/Logo_Lazy_Hound.png"),
@@ -276,19 +292,6 @@ class _MyHomePageState extends State<MyHomePage> {
           // the App.build method, and use it to set our appbar title.
           title: Text("Primary Page"),
         ),
-        body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: ElevatedButton(
-            child: Text('Vai alla seconda pagina'),
-    onPressed: () {
-    Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) => SecondPage()),
-    );
-    },
-      ),
-      )
     );
   }
 }

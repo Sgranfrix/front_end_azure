@@ -22,8 +22,8 @@ class RestManager {
   }*/
 
   Future<String> _makeRequest(String serverAddress, String servicePath, String method, TypeHeader type, {Map<String, String>? value, dynamic body}) async {
-
-    Uri uri = Uri.http(serverAddress,servicePath,value);
+    Uri uri2=Uri.http(serverAddress,servicePath,value);
+    Uri uri = Uri.https(serverAddress,servicePath,value);
     bool errorOccurred = false;
     while ( true ) {
       try {
@@ -53,6 +53,12 @@ class RestManager {
               uri,
               headers: headers,
               body: formattedBody,
+            );
+            break;
+          case "get2":
+            response = await get(
+            uri2,
+            headers: headers,
             );
             break;
           case "get":
@@ -100,6 +106,11 @@ class RestManager {
   Future<String> makeGetRequest(String serverAddress, String servicePath, [Map<String, String>? value, TypeHeader? type]) async {
     print("EEEEEEEEEEEEE");
     return _makeRequest(serverAddress, servicePath, "get", TypeHeader.json, value: value);
+  }
+
+  Future<String> makeGet2Request(String serverAddress, String servicePath, [Map<String, String>? value, TypeHeader? type]) async {
+    print("EEEEEEEEEEEEE");
+    return _makeRequest(serverAddress, servicePath, "get2", TypeHeader.json, value: value);
   }
 
   Future<String> makePutRequest(String serverAddress, String servicePath, [Map<String, String>? value, TypeHeader? type]) async {

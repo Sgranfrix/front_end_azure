@@ -135,6 +135,8 @@ class VisualizzaDatiState extends State<VisualizzaDati> {
     Model.sharedInstance.download(idController.text); // Sostituisci con l'URL del tuo endpoint di caricamento
   }
 
+
+
 }
 class ListaDatiWidget extends StatelessWidget {
   List<DatiSportivi>? dati;
@@ -163,6 +165,7 @@ class ListaDatiWidget extends StatelessWidget {
                    return DatiCard(
                       dati: dati![index],
                     );}
+
                   else{
                     return SnackBar(content: Text(
                         "Non ci sono dati da visualizzare"),
@@ -172,6 +175,7 @@ class ListaDatiWidget extends StatelessWidget {
               ),
 
         ),
+
 
         /*BarChart(
             BarChartData(

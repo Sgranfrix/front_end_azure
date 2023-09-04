@@ -27,6 +27,21 @@ class DatiCard extends StatelessWidget{
             _buildInfoRow('Durata allenamento:', '${dati.durata.toString()} minuti'),
             _buildInfoRow("Tipo dell'attività svolta:", dati.tipoAttivita),
             _buildInfoRow("Note sull'allenamento:", dati.note),
+            Container(
+            height:50.0,
+              width: dati.durata.toDouble()*4,
+            color: Colors.blue, // Puoi personalizzare il colore a tuo piacimento
+            margin: EdgeInsets.all(10.0),
+              child: Center(
+                child: Text(
+                  dati.durata.toString()+"minuti",
+                  style: TextStyle(
+                    color: Colors.white, // Colore del testo
+                    fontSize: 20.0, // Dimensione del testo
+                  ),
+                ),
+            ),
+            ),// Spazio tra i rettangoli
           ],
         ),
       ),

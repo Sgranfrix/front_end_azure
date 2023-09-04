@@ -116,7 +116,7 @@ class _SecondPageState extends State<SecondPage>{
       );
   }
   Future<void> uploadFile(List<int> fileData, String fileName, String nomeUtente) async {
-    var url = Uri.parse('http://localhost:8080/api/datiSportivi/upload?fileName=' + fileName+"&"+"nomeUtente="+nomeUtente); // Sostituisci con l'URL del tuo endpoint di caricamento
+    var url = Uri.parse('https://lazyhound.azurewebsites.net/api/datiSportivi/upload?fileName=' + fileName+"&"+"nomeUtente="+nomeUtente); // Sostituisci con l'URL del tuo endpoint di caricamento
     nomeFile=fileName;
     var response = await post(
       url,

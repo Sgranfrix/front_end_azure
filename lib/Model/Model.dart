@@ -44,6 +44,7 @@ class Model {
     Map<String, String> params = Map();
     params["folderName"] = folderName;
     await _restManager.makeGetRequest(Costanti.ADDRESS_SERVER, Costanti.path_download, params);
+    //await _restManager.makeGet2Request("localhost:8080", Costanti.path_download, params);
 
   }
 

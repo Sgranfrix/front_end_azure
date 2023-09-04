@@ -3,7 +3,8 @@ class Costanti{
   static const String authority="serviziob2c.b2clogin.com";
   static const String pathLoginB2C="/serviziob2c.onmicrosoft.com/oauth2/v2.0/authorize";
   static const String client_id="ab08ec79-5edd-427b-99fd-1afb2805b60f";
-  static const String redirect_uri="http://localhost:8080/api/User/aggiungi";
+  //static const String redirect_uri="http://localhost:8080/api/User/aggiungi";
+  static const String redirect_uri="https://lazyhound.azurewebsites.net/api/User/aggiungi";
   static const String userFlowName="B2C_1_utenti-app";
   //static const String ADDRESS_SERVER="localhost:8080";
   static const String ADDRESS_SERVER="lazyhound.azurewebsites.net";
